@@ -39,7 +39,7 @@ randomChoreDoorGenerator = () => {
  * @returns {bool} result if door open or not
  */
 isClicked = (door) => {
-  return !(door === closedDoorPath);
+  return !(door.src === closedDoorPath);
 }
 /**
  * decrease numberCloseDoors counters and check if it should call a gameover event.
