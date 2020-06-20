@@ -30,6 +30,11 @@ randomChoreDoorGenerator = () => {
       break;
   }
 };
+playDoor = () => {
+  numCloseDoors--;
+  if (numCloseDoors === 0) /*gameOver()*/;
+
+};
 randomChoreDoorGenerator();
 doorImage1.onclick = () => doorImage1.src = openDoor1;
 doorImage2.onclick = () => doorImage2.src = openDoor2;
