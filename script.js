@@ -62,6 +62,15 @@ gameOver = (status) => {
   }
   currentlyPlaying = false;
 }
+startRound = () => {
+  doorImage1.src = closedDoorPath;
+  doorImage2.src = closedDoorPath;
+  doorImage3.src = closedDoorPath;
+  numCloseDoors = 3;
+  startButton.innerHTML = "Good Luck";
+  currentlyPlaying = true;
+  randomChoreDoorGenerator()
+}
 /**
  * decrease numberCloseDoors counters and check if it should call a gameover event.
  */
@@ -71,7 +80,7 @@ playDoor = (door) => {
   else if (isBot(door)) gameOver();
 
 };
-randomChoreDoorGenerator();
+startRound();
 
 //debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
 doorImage1.onclick = () => {
@@ -98,5 +107,9 @@ doorImage3.onclick = () => {
   playDoor(doorImage3);
   //debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
   }
+};
+
+startButton.onclick = () => {
+  if(!currentlyPlaying) startRound();
 };
 
