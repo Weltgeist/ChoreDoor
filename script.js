@@ -36,6 +36,13 @@ randomChoreDoorGenerator = () => {
   }
 };
 /**
+ * check if doors is bot(true) or not.
+ * @returns {bool} result if door is bot or not
+ */
+isBot = (door) => {
+  return (door.src === botDoorPath);
+}
+/**
  * check if door is open(true) or not(false).
  * @returns {bool} result if door open or not
  */
