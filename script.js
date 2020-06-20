@@ -8,6 +8,7 @@ let numCloseDoors = 3;
 let openDoor1 = "";
 let openDoor2 = "";
 let openDoor3 = "";
+let closedDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg";
 /**
  * generate random door placement for chorebots and other figure.
  */
@@ -33,6 +34,9 @@ randomChoreDoorGenerator = () => {
       break;
   }
 };
+isClicked = (door) => {
+  return !(door === closedDoorPath);
+}
 /**
  * decrease numberCloseDoors counters and check if it should call a gameover event.
  */
