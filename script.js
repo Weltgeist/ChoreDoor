@@ -61,6 +61,9 @@ gameOver = (status) => {
   }
   currentlyPlaying = false;
 }
+/**
+ * reset match to original values and generate new positions for doors.
+ */
 startRound = () => {
   doorImage1.src = closedDoorPath;
   doorImage2.src = closedDoorPath;
