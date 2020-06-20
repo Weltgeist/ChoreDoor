@@ -30,6 +30,6 @@ randomChoreDoorGenerator = () => {
       break;
   }
 };
-doorImage1.onclick = () => doorImage1.src = botDoorPath;
-doorImage2.onclick = () => doorImage2.src = beachDoorPath;
-doorImage3.onclick = () => doorImage3.src = spaceDoorPath;
+doorImage1.onclick = () => doorImage1.src = openDoor1;
+doorImage2.onclick = () => doorImage2.src = openDoor2;
+doorImage3.onclick = () => doorImage3.src = openDoor3;
