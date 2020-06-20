@@ -8,6 +8,9 @@ let numCloseDoors = 3;
 let openDoor1 = "";
 let openDoor2 = "";
 let openDoor3 = "";
+/**
+ * generate random door placement for chorebots and other figure.
+ */
 randomChoreDoorGenerator = () => {
   let choreDoor = Math.floor((Math.random()*numCloseDoors));
   switch (choreDoor) {
@@ -30,6 +33,9 @@ randomChoreDoorGenerator = () => {
       break;
   }
 };
+/**
+ * decrease numberCloseDoors counters and check if it should call a gameover event.
+ */
 playDoor = () => {
   numCloseDoors--;
   if (numCloseDoors === 0) /*gameOver()*/;
