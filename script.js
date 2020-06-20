@@ -10,6 +10,7 @@ let openDoor2 = "";
 let openDoor3 = "";
 let closedDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg";
 const startButton = document.getElementById("start");
+const currentPlaying = true;
 /**
  * generate random door placement for chorebots and other figure.
  */
@@ -58,6 +59,7 @@ gameOver = (status) => {
   } else {
     startButton.innerHTML = "Game over! Play again?";
   }
+  currentPlaying = false;
 }
 /**
  * decrease numberCloseDoors counters and check if it should call a gameover event.
@@ -69,19 +71,19 @@ playDoor = (door) => {
 
 };
 randomChoreDoorGenerator();
-if (!isClicked(doorImage1)){
+if (!isClicked(doorImage1) && currentPlaying){
   doorImage1.onclick = () => {
     doorImage1.src = openDoor1;
     playDoor(doorImage1);
   };
 }
-if (!isClicked(doorImage2)){
+if (!isClicked(doorImage2) && currentPlaying){
   doorImage2.onclick = () => {
     doorImage2.src = openDoor2;
     playDoor(doorImage2);
   };
 }
-if (!isClicked(doorImage3)){
+if (!isClicked(doorImage3) && currentPlaying){
   doorImage3.onclick = () => {
     doorImage3.src = openDoor3;
     playDoor(doorImage3);
