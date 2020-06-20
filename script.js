@@ -10,6 +10,25 @@ let openDoor2;
 let openDoor3;
 randomChoreDoorGenerator = () => {
   let choreDoor = Math.floor((Math.random()*numCloseDoors));
+  switch (choreDoor) {
+    case 0:
+      openDoor1 = botDoorPath;
+      openDoor2 = beachDoorPath;
+      openDoor3 = spaceDoorPath;
+      break;
+    case 1:
+      openDoor1 = spaceDoorPath;
+      openDoor2 = botDoorPath;
+      openDoor3 = beachDoorPath;
+      break;
+    case 2:
+      openDoor1 = beachDoorPath;
+      openDoor2 = spaceDoorPath;
+      openDoor3 = botDoorPath;
+      break;
+    default:
+      break;
+  }
 };
 doorImage1.onclick = () => doorImage1.src = botDoorPath;
 doorImage2.onclick = () => doorImage2.src = beachDoorPath;
