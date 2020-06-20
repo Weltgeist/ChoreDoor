@@ -63,3 +63,10 @@ header {
   cursor: pointer;
   padding: 10px;
 }
+
+#debug {
+  text-align: center;
+  font-size: 36px;
+  color: white;
+  font-family: "Work Sans";
+}

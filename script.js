@@ -10,7 +10,8 @@ let openDoor2 = "";
 let openDoor3 = "";
 let closedDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg";
 const startButton = document.getElementById("start");
-let currentPlaying = true;
+let currentlyPlaying = true;
+const debug = document.getElementById("debug");
 /**
  * generate random door placement for chorebots and other figure.
  */
@@ -59,7 +60,7 @@ gameOver = (status) => {
   } else {
     startButton.innerHTML = "Game over! Play again?";
   }
-  currentPlaying = false;
+  currentlyPlaying = false;
 }
 /**
  * decrease numberCloseDoors counters and check if it should call a gameover event.
@@ -71,21 +72,31 @@ playDoor = (door) => {
 
 };
 randomChoreDoorGenerator();
-if (currentPlaying && !isClicked(doorImage1) ){
-  doorImage1.onclick = () => {
-    doorImage1.src = openDoor1;
-    playDoor(doorImage1);
-  };
-}
-if (currentPlaying && !isClicked(doorImage2)){
-  doorImage2.onclick = () => {
-    doorImage2.src = openDoor2;
-    playDoor(doorImage2);
-  };
-}
-if (currentPlaying && !isClicked(doorImage3)){
-  doorImage3.onclick = () => {
-    doorImage3.src = openDoor3;
-    playDoor(doorImage3);
-  };
-}
+
+debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
+doorImage1.onclick = () => {
+  if (currentlyPlaying  && (!isClicked(doorImage1)) ){
+  doorImage1.src = openDoor1;
+  playDoor(doorImage1);
+  debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
+  }
+};
+
+
+doorImage2.onclick = () => {
+  if (currentlyPlaying && (!isClicked(doorImage2))){
+  doorImage2.src = openDoor2;
+  playDoor(doorImage2);
+  debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
+  }
+};
+
+
+doorImage3.onclick = () => {
+  if (currentlyPlaying && (!isClicked(doorImage3))){
+  doorImage3.src = openDoor3;
+  playDoor(doorImage3);
+  debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
+  }
+};
+
