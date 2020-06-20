@@ -11,7 +11,6 @@ let openDoor3 = "";
 let closedDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg";
 const startButton = document.getElementById("start");
 let currentlyPlaying = true;
-//const debug = document.getElementById("debug");
 /**
  * generate random door placement for chorebots and other figure.
  */
@@ -82,12 +81,10 @@ playDoor = (door) => {
 };
 startRound();
 
-//debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
 doorImage1.onclick = () => {
   if (currentlyPlaying  && (!isClicked(doorImage1)) ){
   doorImage1.src = openDoor1;
   playDoor(doorImage1);
-  //debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
   }
 };
 
@@ -96,7 +93,6 @@ doorImage2.onclick = () => {
   if (currentlyPlaying && (!isClicked(doorImage2))){
   doorImage2.src = openDoor2;
   playDoor(doorImage2);
-  //debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
   }
 };
 
@@ -105,7 +101,6 @@ doorImage3.onclick = () => {
   if (currentlyPlaying && (!isClicked(doorImage3))){
   doorImage3.src = openDoor3;
   playDoor(doorImage3);
-  //debug.innerHTML = "currentlyPlaying: "+String(currentlyPlaying) +" isclicked1: " +String(!isClicked(doorImage1))  +" isclicked2: " +String(!isClicked(doorImage2)) +" isclicked3: " +String(!isClicked(doorImage3));
   }
 };
 
