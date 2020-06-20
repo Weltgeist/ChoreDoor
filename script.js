@@ -60,27 +60,28 @@ gameOver = (status) => {
 /**
  * decrease numberCloseDoors counters and check if it should call a gameover event.
  */
-playDoor = () => {
+playDoor = (door) => {
   numCloseDoors--;
   if (numCloseDoors === 0) gameOver("win");
+  else if (isBot(door)) gameOver();
 
 };
 randomChoreDoorGenerator();
 if (!isClicked(doorImage1)){
   doorImage1.onclick = () => {
     doorImage1.src = openDoor1;
-    playDoor();
+    playDoor(doorImage1);
   };
 }
 if (!isClicked(doorImage2)){
   doorImage2.onclick = () => {
     doorImage2.src = openDoor2;
-    playDoor();
+    playDoor(doorImage2);
   };
 }
 if (!isClicked(doorImage3)){
   doorImage3.onclick = () => {
     doorImage3.src = openDoor3;
-    playDoor();
+    playDoor(doorImage3);
   };
 }
