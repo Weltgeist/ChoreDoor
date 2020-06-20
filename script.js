@@ -50,9 +50,15 @@ playDoor = () => {
 
 };
 randomChoreDoorGenerator();
-doorImage1.onclick = () => doorImage1.src = openDoor1;
-playDoor();
+if (isClicked(doorImage1)){
+  doorImage1.onclick = () => doorImage1.src = openDoor1;
+  playDoor();
+}
+if (isClicked(doorImage2)){
 doorImage2.onclick = () => doorImage2.src = openDoor2;
 playDoor();
+}
+if (isClicked(doorImage3)){
 doorImage3.onclick = () => doorImage3.src = openDoor3;
 playDoor();
+}
