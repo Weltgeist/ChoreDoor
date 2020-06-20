@@ -14,6 +14,13 @@ header {
   text-align: center;
 }
 
+.instruction-title {
+  display: inline;
+  font-size: 18px;
+  color: #00ffff;
+  font-family: 'Work Sans';
+}
+
 .door-frame {
   cursor: pointer;
   padding: 10px;
