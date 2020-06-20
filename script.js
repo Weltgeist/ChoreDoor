@@ -47,7 +47,7 @@ isClicked = (door) => {
  */
 playDoor = () => {
   numCloseDoors--;
-  if (numCloseDoors === 0) /*gameOver()*/;
+  if (numCloseDoors === 0) gameOver();
 
 };
 randomChoreDoorGenerator();
@@ -63,6 +63,8 @@ if (!isClicked(doorImage3)){
 doorImage3.onclick = () => doorImage3.src = openDoor3;
 playDoor();
 }
-gameOver = () => {
-
+gameOver = (status) => {
+  if(status === "win"){
+    startButton.innerHTML = "You win! Play again?";
+  }
 }
