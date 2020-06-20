@@ -63,6 +63,9 @@ if (!isClicked(doorImage3)){
 doorImage3.onclick = () => doorImage3.src = openDoor3;
 playDoor();
 }
+/**
+ * conclude game by resolving on win or lose scenario.
+ */
 gameOver = (status) => {
   if(status === "win"){
     startButton.innerHTML = "You win! Play again?";
