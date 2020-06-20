@@ -8,6 +8,12 @@ header {
   text-align: center;
 } 
 
+.title-row {
+  margin-top: 42px;
+  margin-bottom: 21px;
+  text-align: center;
+}
+
 .door-frame {
   cursor: pointer;
   padding: 10px;
