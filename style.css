@@ -21,6 +21,24 @@ header {
   font-family: 'Work Sans';
 }
 
+.instructions-number {
+  padding-right: 25px;
+  font-family: 'Work Sans';
+  font-size: 36px;
+  color: #00ffff;
+}
+
+.instructions-text {
+  padding: 10px;
+  font-family: 'Work Sans';
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.instructions-row {
+  margin: 0 auto;
+  width: 400px;
+}
 .door-frame {
   cursor: pointer;
   padding: 10px;
