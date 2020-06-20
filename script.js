@@ -43,31 +43,37 @@ isClicked = (door) => {
   return !(door.src === closedDoorPath);
 }
 /**
- * decrease numberCloseDoors counters and check if it should call a gameover event.
- */
-playDoor = () => {
-  numCloseDoors--;
-  if (numCloseDoors === 0) gameOver();
-
-};
-randomChoreDoorGenerator();
-if (!isClicked(doorImage1)){
-  doorImage1.onclick = () => doorImage1.src = openDoor1;
-  playDoor();
-}
-if (!isClicked(doorImage2)){
-doorImage2.onclick = () => doorImage2.src = openDoor2;
-playDoor();
-}
-if (!isClicked(doorImage3)){
-doorImage3.onclick = () => doorImage3.src = openDoor3;
-playDoor();
-}
-/**
  * conclude game by resolving on win or lose scenario.
  */
 gameOver = (status) => {
   if(status === "win"){
     startButton.innerHTML = "You win! Play again?";
   }
+}
+/**
+ * decrease numberCloseDoors counters and check if it should call a gameover event.
+ */
+playDoor = () => {
+  numCloseDoors--;
+  if (numCloseDoors === 0) gameOver("win");
+
+};
+randomChoreDoorGenerator();
+if (!isClicked(doorImage1)){
+  doorImage1.onclick = () => {
+    doorImage1.src = openDoor1;
+    playDoor();
+  };
+}
+if (!isClicked(doorImage2)){
+  doorImage2.onclick = () => {
+    doorImage2.src = openDoor2;
+    playDoor();
+  };
+}
+if (!isClicked(doorImage3)){
+  doorImage3.onclick = () => {
+    doorImage3.src = openDoor3;
+    playDoor();
+  };
 }
