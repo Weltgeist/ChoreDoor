@@ -34,6 +34,10 @@ randomChoreDoorGenerator = () => {
       break;
   }
 };
+/**
+ * check if door is open(true) or not(false).
+ * @returns {bool} result if door open or not
+ */
 isClicked = (door) => {
   return !(door === closedDoorPath);
 }
